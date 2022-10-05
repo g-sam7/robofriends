@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './App.css';
 import Header from "./Header";
 import Footer from "./Footer";
+import Scroll from "./Scroll";
 import CardList from "./CardList";
 
 class App extends Component {
@@ -36,7 +37,9 @@ class App extends Component {
       return (
         <div className="bg-gradient-to-r from-cyan-500 to-blue-500">
           <Header searchChange={this.onSearchChange} />
-          <CardList robots={filteredRobots} />
+          <Scroll>
+            <CardList robots={filteredRobots} />
+          </Scroll>
           <Footer />
         </div>
       )
