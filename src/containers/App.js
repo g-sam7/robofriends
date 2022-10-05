@@ -3,6 +3,7 @@ import './App.css';
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Scroll from "../components/Scroll";
+import ErrorBoundry from '../components/ErrorBoundry';
 import CardList from "../components/CardList";
 
 class App extends Component {
@@ -36,7 +37,9 @@ class App extends Component {
       <div className="bg-gradient-to-r from-cyan-500 to-blue-500">
         <Header searchChange={this.onSearchChange} />
         <Scroll>
-          <CardList robots={filteredRobots} />
+          <ErrorBoundry>
+            <CardList robots={filteredRobots} />
+          </ErrorBoundry>
         </Scroll>
         <Footer />
       </div>
